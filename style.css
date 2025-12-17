@@ -1,0 +1,237 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&amp;display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+.main {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .image-container {
+  padding: 10px;
+}
+
+.main .image-container .image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .image-container .image img {
+  width: 350px;
+  align-items: center;
+}
+
+.main .image-container h1 {
+  color: #00bcd4;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.main .image-container p {
+  color: #324042;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 50px;
+  border-radius: 20px;
+  background: rgb(202 253 255 / 50%);
+}
+
+.main .input .talk {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.main .input .talk i {
+  font-size: 20px;
+  color: #aed0d0;
+}
+
+.main .input .content {
+  color: #aed0d0;
+  font-size: 15px;
+  margin-right: 20px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  background: #000;
+}
+
+/* MAIN SECTION */
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* IMAGE SECTION */
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  width: 280px;
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px rgba(0, 229, 255, 0.6),
+    0 0 60px rgba(0, 188, 212, 0.4);
+}
+
+.image-container h1 {
+  color: #00e5ff;
+  font-size: 2.5rem;
+  margin: 15px 0;
+  text-shadow:
+    0 0 10px #00e5ff,
+    0 0 20px #00bcd4,
+    0 0 40px #0097a7;
+}
+
+.image-container p {
+  color: #6b8b8f;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* INPUT / MIC BAR */
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+  height: 55px;
+  border-radius: 25px;
+  background: rgba(202, 253, 255, 0.2);
+  padding: 10px;
+  box-shadow:
+    0 0 15px rgba(0, 229, 255, 0.4),
+    inset 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+/* MIC BUTTON */
+.talk {
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.talk:active {
+  transform: scale(0.95);
+}
+
+.talk i {
+  font-size: 22px;
+  color: #00e5ff;
+  text-shadow:
+    0 0 10px #00e5ff,
+    0 0 20px #00bcd4;
+}
+
+/* MIC ANIMATION */
+.talk::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(0, 229, 255, 0.4);
+  opacity: 0;
+  animation: none;
+}
+
+.talk.listening::after {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* SPEECH CONTENT */
+.content {
+  color: #aed0d0;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .image-container h1 {
+    font-size: 2rem;
+  }
+  .image-container img {
+    width: 220px;
+  }
+  .content {
+    font-size: 0.85rem;
+  }
+}
